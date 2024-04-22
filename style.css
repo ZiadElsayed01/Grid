@@ -1,0 +1,347 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  line-height: 26px;
+  font-family: "Open Sans", sans-serif;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(1fr, 450px);
+  grid-template-areas:
+    "box1 box1 box1 box1 box1 box1 box2 box2 box2 box2 box2 box2"
+    "box3 box3 box3 box4 box4 box4 box4 box4 box4 box5 box5 box5"
+    "box6 box6 box6 box7 box7 box7 box7 box7 box7 box5 box5 box5"
+    "box8 box8 box8 box9 box9 box9 box10 box10 box10 box10 box10 box10";
+}
+.box1 {
+  grid-area: box1;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px 15px 0px;
+}
+.box1 .text {
+  width: 30%;
+}
+.box1 .image {
+  width: 32%;
+  align-self: flex-end;
+}
+.box1 img {
+  width: 100%;
+}
+.box2 {
+  grid-area: box2;
+  background-color: #f7f8f9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.box2 h1 {
+  color: #333;
+  font-family: Arvo, sans-serif;
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 400;
+  max-width: 550px;
+  margin: 10px 0;
+}
+.box2 a {
+  color: #27b9c2;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+.box3 {
+  grid-area: box3;
+  background-color: #e55332;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+.box3 img {
+  width: 250px;
+}
+.box3 h2 {
+  color: white;
+  margin: 10px 0;
+  font-family: Arvo, sans-serif;
+  font-size: 22px;
+  max-width: 200px;
+  text-align: center;
+}
+.box3 a {
+  color: #fac60a;
+}
+.box4 {
+  grid-area: box4;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 30px 0;
+}
+.box4 .text {
+  max-width: 180px;
+  position: relative;
+}
+.box4 .text img {
+  position: absolute;
+  left: -160%;
+  width: 250%;
+  bottom: 0;
+}
+.box4 .info {
+  width: 45%;
+}
+.box4 .info a {
+  color: #27b9c2;
+}
+.box5 {
+  grid-area: box5;
+  background-color: #8c78be;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  padding: 40px 0;
+}
+.box5 .circle {
+  background-color: #7e68b2;
+  border-radius: 50%;
+  width: 375px;
+  height: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.box5 .circle .flag {
+  background-color: hsla(0, 0%, 100%, 0.08);
+  border-radius: 30px;
+  padding: 0 15px;
+}
+.box5 .circle .flag span,
+.box5 .circle p {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.box5 .circle .flag i {
+  width: 10px;
+  color: #fac60a;
+  margin-right: 10px;
+}
+.box5 .circle .disk {
+  width: 220px;
+}
+.box5 .text h2 {
+  font-family: Arvo, sans-serif;
+  font-size: 32px;
+  margin: 10px 0;
+}
+.box5 .text p {
+  width: 80%;
+  margin: 25px auto;
+}
+.box5 .text a {
+  margin-top: 30px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background-color: #ffc80a;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.box6 {
+  grid-area: box6;
+  background-color: #f7f8f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.box6 img {
+  width: 200px;
+}
+.box6 a {
+  color: #27b9c2;
+}
+.box7 {
+  grid-area: box7;
+  background-color: #97b6b7;
+  background-image: url(images/box_7.png);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 80%;
+  color: white;
+  position: relative;
+}
+.box7 .ticket {
+  position: relative;
+  left: 20px;
+  background-color: #ef654b;
+  width: fit-content;
+  padding: 0 8px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 15px;
+  letter-spacing: 2.4px;
+  font-weight: 700;
+}
+.box7 h2 {
+  font-family: Arvo, sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 22px;
+  line-height: 1.5;
+  padding: 15px 0;
+}
+.box7 img {
+  width: 90%;
+  position: absolute;
+  left: -7%;
+  bottom: 0;
+}
+.box8 {
+  grid-area: box8;
+  background-color: #5dd6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.box8 .circle {
+  width: 240px;
+  height: 240px;
+  text-align: center;
+  background-color: #35cfed;
+  padding: 0 25px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.box8 .circle img {
+  width: 45px;
+}
+.box8 .circle h3 {
+  font-family: Arvo, sans-serif;
+  color: white;
+  font-weight: 300;
+}
+.box9 {
+  grid-area: box9;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+.box9 p {
+  background-color: #86c300;
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 2.4px;
+}
+.box9 h2 {
+  width: 70%;
+  text-align: center;
+  margin: 15px 0 !important;
+}
+.box10 {
+  grid-area: box10;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.box10 img {
+  width: 270px;
+  position: relative;
+  left: -15%;
+}
+.box10 p {
+  color: white;
+  font-family: Arvo, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  width: 30%;
+}
+
+.box1 .text p:first-child,
+.box2 p:first-child,
+.box4 .text p {
+  font-family: Montserrat, sans-serif;
+  color: #9fa3a7;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.box1 .text h2,
+.box4 .text h2,
+.box6 h2,
+.box9 h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: Arvo, sans-serif;
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #333;
+}
+.box1 .text p:last-child,
+.box4 .info p {
+  color: #9fa3a7;
+  font-size: 16px;
+}
+.box3 a,
+.box4 a,
+.box6 a {
+  margin: 15px 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+  .parent {
+    grid-template-areas:
+      "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+      "box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1"
+      "box3 box3 box3 box3 box3 box3 box6 box6 box6 box6 box6 box6"
+      "box4 box4 box4 box4 box4 box4 box4 box4 box4 box4 box4 box4"
+      "box8 box8 box8 box8 box8 box8 box5 box5 box5 box5 box5 box5"
+      "box7 box7 box7 box7 box7 box7 box5 box5 box5 box5 box5 box5"
+      "box9 box9 box9 box9 box9 box9 box9 box9 box9 box9 box9 box9"
+      "box10 box10 box10 box10 box10 box10 box10 box10 box10 box10 box10 box10";
+  }
+}
