@@ -9,7 +9,6 @@ body {
 .parent {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(1fr, 450px);
   grid-template-areas:
     "box1 box1 box1 box1 box1 box1 box2 box2 box2 box2 box2 box2"
     "box3 box3 box3 box4 box4 box4 box4 box4 box4 box5 box5 box5"
@@ -26,18 +25,17 @@ body {
 }
 .box1 .text {
   width: 30%;
-}
-.box1 .image {
-  width: 32%;
-  align-self: flex-end;
+  align-self: flex-start;
+  padding: 15px;
 }
 .box1 img {
-  width: 100%;
+  align-self: flex-end;
+  width: 35%;
 }
 .box2 {
   grid-area: box2;
   background-color: #f7f8f9;
-  padding: 20px;
+  padding: 30px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +66,7 @@ body {
   padding: 40px 0;
 }
 .box3 img {
-  width: 250px;
+  width: 300px;
 }
 .box3 h2 {
   color: white;
@@ -89,14 +87,14 @@ body {
   padding: 60px 30px 0;
 }
 .box4 .text {
-  max-width: 180px;
   position: relative;
+  width: 180px;
 }
 .box4 .text img {
-  position: absolute;
+  position: relative;
   left: -160%;
   width: 250%;
-  bottom: 0;
+  bottom: -8px;
 }
 .box4 .info {
   width: 45%;
@@ -177,9 +175,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 30px 0;
 }
 .box6 img {
-  width: 200px;
+  width: 260px;
+  position: relative;
+  left: -7%;
 }
 .box6 a {
   color: #27b9c2;
@@ -196,12 +197,13 @@ body {
 }
 .box7 .ticket {
   position: relative;
+  top: 10px;
   left: 20px;
   background-color: #ef654b;
   width: fit-content;
-  padding: 0 8px;
+  padding: 0 10px;
   text-transform: uppercase;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 15px;
   letter-spacing: 2.4px;
   font-weight: 700;
@@ -216,9 +218,9 @@ body {
 }
 .box7 img {
   width: 90%;
-  position: absolute;
+  position: relative;
   left: -7%;
-  bottom: 0;
+  top: 7px;
 }
 .box8 {
   grid-area: box8;
@@ -293,7 +295,6 @@ body {
   font-weight: 400;
   width: 30%;
 }
-
 .box1 .text p:first-child,
 .box2 p:first-child,
 .box4 .text p {
@@ -332,6 +333,11 @@ body {
   text-transform: uppercase;
 }
 
+@media (min-width: 992px) {
+  .parent {
+    grid-template-rows: repeat(3, auto) 200px;
+  }
+}
 @media (max-width: 992px) {
   .parent {
     grid-template-areas:
@@ -343,5 +349,63 @@ body {
       "box7 box7 box7 box7 box7 box7 box5 box5 box5 box5 box5 box5"
       "box9 box9 box9 box9 box9 box9 box9 box9 box9 box9 box9 box9"
       "box10 box10 box10 box10 box10 box10 box10 box10 box10 box10 box10 box10";
+  }
+}
+@media (max-width: 768px) {
+  .parent {
+    grid-template-areas:
+      "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+      "box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1"
+      "box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3"
+      "box6 box6 box6 box6 box6 box6 box6 box6 box6 box6 box6 box6"
+      "box4 box4 box4 box4 box4 box4 box4 box4 box4 box4 box4 box4"
+      "box8 box8 box8 box8 box8 box8 box8 box8 box8 box8 box8 box8"
+      "box7 box7 box7 box7 box7 box7 box7 box7 box7 box7 box7 box7"
+      "box5 box5 box5 box5 box5 box5 box5 box5 box5 box5 box5 box5"
+      "box9 box9 box9 box9 box9 box9 box9 box9 box9 box9 box9 box9"
+      "box10 box10 box10 box10 box10 box10 box10 box10 box10 box10 box10 box10";
+  }
+  .box1 {
+    flex-direction: column;
+  }
+  .box1 .text {
+    width: 100%;
+    padding: 20px 40px;
+  }
+  .box1 img {
+    align-self: center;
+    width: 70%;
+  }
+  .box4 {
+    padding: 30px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .box4 .text {
+    width: 100%;
+    overflow: hidden;
+  }
+  .box4 .text .content {
+    padding: 0 25px;
+  }
+  .box4 .text img {
+    position: relative;
+    left: 0;
+    transform: translateX(-55%);
+    width: 150%;
+  }
+  .box4 .info {
+    width: 90%;
+    padding: 20px 0;
+  }
+  .box9 h2 {
+    width: 60%;
+  }
+  .box10 {
+    flex-direction: column;
+  }
+  .box10 p {
+    text-align: center;
+    width: 70%;
   }
 }
